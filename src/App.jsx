@@ -20,11 +20,19 @@ export default function App() {
     console.log(product);
   };
 
+  const handleDelete = (productDel) => {
+    setProductList((currentProd) =>
+      currentProd.filter((product) => product !== productDel)
+    );
+  };
+
   return (
     <>
       <ul>
         {productList.map((product, index) => (
-          <li key={index}> {product} </li>
+          <li key={index}>
+            {product} <button onClick={() => handleDelete(product)}> X </button>
+          </li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
