@@ -13,6 +13,8 @@ export default function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setProductList((currentState) => [...currentState, product]);
+
+    setProduct("");
   };
 
   const handleField = (e) => {
